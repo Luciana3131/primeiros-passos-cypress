@@ -21,7 +21,7 @@ describe('Orange HRM test', () => {// nome do site ou projeto que estou automati
   //it.skip - colocar .skip para nao executar esse bloco de teste
 
     // link do site que estou testando
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit('/auth/login')
    
     //preenche o campo do usuario
     cy.get(SelectorsList.usernameField).type(userData.userSuccess.username)
@@ -41,7 +41,7 @@ describe('Orange HRM test', () => {// nome do site ou projeto que estou automati
   it('Login - fail', () => {
 
     // link do site que estou testando
-    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+    cy.visit('/auth/login')
    
     //preenchendo o campo do usuario com nome invalido
     cy.get(SelectorsList.usernameField).type(userData.userFail.username)
