@@ -1,7 +1,4 @@
 {
-  "devDependencies": {
-    "cypress": "^15.1.0"
-  },
   "name": "primeiros-passos-cypress",
   "version": "1.0.0",
   "description": "",
@@ -176,5 +173,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.10.0"
+  }
 }
