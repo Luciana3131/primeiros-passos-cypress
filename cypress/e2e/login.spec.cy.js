@@ -6,26 +6,18 @@ import MenuPage from '../pages/menuPage'
 
 
 const loginPage = new LoginPage()
-const dashboardPage = new DashboardPage
+const dashboardPage = new DashboardPage()
 
-describe('Login Orange HRM test', () => {
- 
-
-  it('Login - fail', () => {  
-    
+describe('Login Orange HRM test', () => { 
+  it('Login - fail', () => {    
         loginPage.accessLoginPage()
         loginPage.loginWithAnyUser(userData.userFail.username, userData.userFail.password)
         loginPage.checkAccessInvalid()
   })
 
   it('Login - Success', () => {
-  
-    loginPage.accessLoginPage()
-     loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
-     dashboardPage.checkDashboarPage()
-   
-  }) 
-
-
-  
+        loginPage.accessLoginPage()
+        loginPage.loginWithAnyUser(userData.userSuccess.username, userData.userSuccess.password)
+        dashboardPage.checkDashboarPage()   
+  })   
 })

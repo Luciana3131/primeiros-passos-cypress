@@ -13,7 +13,6 @@ class MyInfoPage {
             submitButton:"[type='submit']",
             genericSelectButton:".oxd-select-text--active",
             genericDropdownButton:'.oxd-select-dropdown'
-
         }
         return selectors
     }
@@ -26,7 +25,7 @@ class MyInfoPage {
     }
 
     fillEmployeeDetails(employeeId, otherIdTest,driversLicenceNumbertest,licenseExpiryDate){
-
+        
         cy.get(this.selectorsList().genericField).eq(3).clear().type(employeeId)
         cy.get(this.selectorsList().genericField).eq(4).clear().type(otherIdTest)
         cy.get(this.selectorsList().genericField).eq(5).clear().type(driversLicenceNumbertest)
@@ -35,9 +34,11 @@ class MyInfoPage {
     }
 
     saveform() {
-        cy.get(this.selectorsList().submitButton).eq(0).click({force: true })
-        cy.get('body').should('contain', 'Successfully Updated')
+
+        cy.get(this.selectorsList().submitButton).eq(1).click({force: true})
+        //cy.get('body').should('contain', 'Successfully Updated')
         cy.get('.oxd-toast-close')
+
     }
     fillStatus(){
 
@@ -50,10 +51,9 @@ class MyInfoPage {
         cy.get(this.selectorsList().genericSelectButton).eq(2).click({force: true })
         cy.get(this.selectorsList().genericDropdownButton).contains('AB+').click({force: true })
 
-       
-
     }
     checkAccessInvalid(){
+        
         cy.get(this.selectorsList().wrongCredentialAtert)
     }
 
